@@ -1,0 +1,1 @@
+A basic proof of concept application and website for getting realtime player location data and displaying it on the Guild Wars 2 map API.
