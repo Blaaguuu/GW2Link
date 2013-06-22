@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>GW2 Realtime Map</title>
+        
+    <meta charset="UTF-8">
+    <meta name="description" content="GW2 Realtime Map" />
+    <meta name="keywords" content="gw2, guild, wars, map, event, events, dragon, dragons, timer, gw2link, gw2linker, link" />
+
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.5/leaflet.css" />
+    <!--[if lte IE 8]>
+        <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.5/leaflet.ie.css" />
+    <![endif]-->
+    <link rel="stylesheet" type="text/css" href="map.css" />
+
+
+</head>
+<body>
+    <div id="top-bar">
+        GW2 Realtime Map - <span id="link-title"><a href="GW2Link.html">Download GW2Link</a></span><span id="link-status"></span>
+    </div>
+    <div id="content-container">
+        <div id="map-container"></div>
+        <div id="right-bar">
+            <h2>Raw Data</h2>
+            <p>
+            Status: <span id="status">Linker not found</span><br /> 
+            Game: <span id="game"></span><br /> 
+            Name: <span id="name"></span><br /> 
+            Server: <span id="server"></span><br /> 
+            Map: <span id="map"></span><br /> 
+            <br /> 
+            PosX: <span id="posx"></span><br /> 
+            PosY: <span id="posy"></span><br /> 
+            PosZ: <span id="posz"></span><br /> 
+            <br /> 
+            Player Rot: <span id="prot"></span><br /> 
+            Camera Rot: <span id="crot"></span><br /> 
+            </p>
+        </div>
+    </div>
+    <div id="bottom-bar">
+        <a href="GW2Link.html">About GW2Link</a>
+    </div>
+
+    <script src="jquery.js"></script>
+    <script src="http://cdn.leafletjs.com/leaflet-0.5/leaflet.js"></script>
+    <script src="map.js"></script>
+    
+</body>
+</html>

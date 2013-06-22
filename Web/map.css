@@ -1,0 +1,146 @@
+html, body, div, span, h1, h2, h3, h4, h5, h6, p, a, img, strike, strong, sub, sup, b, u, i, center, dl, dt, dd, ol, ul, li, form, label, table, tbody, tfoot, thead, tr, th, td, canvas, audio, video {
+    margin:0;
+    padding:0;
+    border:0;
+    font-size:100%;
+    font:inherit;
+    vertical-align:baseline;
+}
+
+body {
+    line-height:1;
+}
+
+ol, ul {
+    list-style:none;
+}
+
+table {
+    border-collapse:collapse;
+    border-spacing:0;
+}
+
+a:link {
+    color:#ccbcb4;
+}
+
+a:active  {
+    color:#ccbcb4;
+}
+
+a:visited {
+    color:#ccbcb4;
+}
+
+a:hover {
+    color:#ccbcb4;
+}
+
+#top-bar {
+    padding:12px;
+    position:fixed;
+    top:0px;
+    left:0px;
+    right: 0px;
+    height: 48px;
+    background-color:#202020;
+    font-family:Arial;
+    font-weight:bold;
+    color:#ccc4bc;
+}
+
+#content-container {
+    position:fixed;
+    top:48px;
+    bottom:48px;
+    left:0px;
+    right:0px;
+    background-color:#a0a0a0;
+}
+
+#map-container {
+    float:left;
+    position:relative;
+    top:0px;
+    left:0px;
+    width:75%;
+    height:100%;
+    background-color:#181818;
+    background-repeat:no-repeat;
+    z-index:-100;
+    overflow:hidden;
+}
+
+#right-bar {
+    padding:0px;
+    float:left;
+    position:relative;
+    top:0px;
+    right:0px;
+    width:25%;
+    height:100%;
+    background-color:#181818;
+    font-family:Arial;
+    color:#ccc4bc;
+
+}
+
+#bottom-bar {
+    padding:12px;
+    position:fixed;
+    bottom:0px;
+    left:0px;
+    right: 0px;
+    height: 48px;
+    background-color:#202020;
+    font-family:Arial;
+    font-weight:bold;
+    color:#ccc4bc;
+
+}
+
+#map-player-pos {
+    top:0px;
+    left:0px;
+    width:128px;
+    height:128px;
+    position:absolute;
+    background-color:#202020;
+    z-index:-110;
+    visibility:hidden;
+}
+
+#map-camera-rot {
+    position:absolute;
+    top:24px;
+    left:24px;
+    width:80px;
+    height:80px;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    background-image:url('img/cam.png');
+    background-size:80px 80px;
+    background-repeat:no-repeat;
+    z-index:-85;
+    visibility:visible;
+}
+
+#map-player-rot {
+    position:absolute;
+    top:48px;
+    left:48px;
+    width:32px;
+    height:32px;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    background-image:url('img/char.png');
+    background-size:32px 32px;
+    background-repeat:no-repeat;
+    z-index:-80;
+    visibility:visible;
+}
+

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>GW2 Realtime Map</title>
+    
+    <meta charset="UTF-8">
+    <meta name="description" content="GW2 Realtime Map" />
+    <meta name="keywords" content="gw2, guild, wars, map, event, events, dragon, dragons, timer, gw2link, gw2linker, link" />
+
+    <link rel="stylesheet" type="text/css" href="GW2Link.css" />
+</head>
+<body>
+<div id="content">
+    <h2>GW2Link</h2>
+    <p>
+        <strong>Download:</strong>
+        <br />
+        <a href="GW2Link.zip">GW2Link.zip</a>
+    </p>
+    <p>
+        <strong>What is GW2Link?</strong>
+        <br />
+        It is a very simple application when gathers data such as player position, rotation, server, and map from a running Guild Wars 2 client, and sends that data to a website that requests it.
+    </p>
+    <p>
+        <strong>How do I use GW2Link?</strong>
+        <br />
+        Download the zip file above, and extract the exe anywhere on your computer. Run GW2Link.exe, as well as the Guild Wars 2 client, and open the <a href="index.html">map</a> - ideally on a second monitor. You should see the download link at the top of the page change to a "Connected" status notification, and a blue icon will appear where your player is. To the right of the map you can see all of the raw data that is gathered by GW2Link.
+    </p>
+    <p>
+        <strong>The icon's location is a little off... what gives?</strong>
+        <br />
+        As far as I can tell, the regions specified by ArenaNet's map API are slightly off. If it isn't corrected by ArenaNet soon, I will manually fix the offsets for each map soon.
+    </p>
+    <p>
+        <strong>The GW2Link application is really ugly...</strong>
+        <br />
+        It is just something I threw together rather quickly - I will update it later to make it look nicer, be more stable, 
+    </p>
+    <p>
+        <strong>The map is boring... what's the point?</strong>
+        <br />
+        You're boring! But this is only a proof-of-concept at the moment. It serves no purpose other than to show that it's possible to display the player's location overlayed on the GW2 map. Eventually I (or someone else) plan on showing more useful information like all of the current map's running events, and events that will start soon. (read further if you are developer, and interested in expanding on this)
+    </p>
+    <p>
+        <strong>Won't I get banned for using mods?</strong>
+        <br />
+        There are no guarantees, but this is highly unlikely in the case of GW2Link. Due to the way the data is gathered, I don't believe GW2Link actually violates the EULA. It doesn't actually read any of GW2's memory, but rather exploits an existing feature inteded for use with the Mumble voip client - GW2Link registers a tiny block of memory on your computer, and the GW2 client periodically looks for that memory and willingly fills it with with player data.
+    </p>
+    <p>
+        <strong>Is this going to steal my password?</strong>
+        <br />
+        I assure you that the application does nothing more than gather small bits of data from GW2 - only data regarding the player's location - and sends it to your browser if you have loaded up the map site. Even the player data that is gathered is only used client-side to display the map - it doesn't get sent to the server.
+    </p>
+    <p>
+        <strong>I'm a developer - Can I use this on my GW2 map site?</strong>
+        <br />
+        Absolutely! You can use the existing GW2Link application, or download the source from GitHub, and modify it to your heart's content.
+    </p>
+    <p>
+        <strong>Your JavaScript is bad, and you shoudl feel bad!</strong>
+        <br />
+        I know... I learned JavaScript with this project... I'm sure my code looks silly to a pro.
+    </p>
+    <p>
+        <strong>I have more questions!</strong>
+        <br />
+        Feel free to contact me at blaaguuu@gmail.com
+    </p>
+    <p>
+        <a href="index.html">Back to the map</a>
+    </p>
+</div>
+</body>
+</html>
