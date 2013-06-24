@@ -17,26 +17,51 @@
 </head>
 <body>
     <div id="top-bar">
-        GW2 Realtime Map - <span id="link-title"><a href="GW2Link.html">Download GW2Link</a></span><span id="link-status"></span>
+        GW2 Realtime Map - <span id="top-download"><a href="GW2Link.html">Download GW2Link</a></span><span id="link-status"><span id="link-status-a">GW2Linker: </span><span id="link-status-b">Not Connected</span></span>
     </div>
     <div id="content-container">
         <div id="map-container"></div>
         <div id="right-bar">
-            <h2>Raw Data</h2>
-            <p>
-            Status: <span id="status">Linker not found</span><br /> 
-            Game: <span id="game"></span><br /> 
-            Name: <span id="name"></span><br /> 
-            Server: <span id="server"></span><br /> 
-            Map: <span id="map"></span><br /> 
-            <br /> 
-            PosX: <span id="posx"></span><br /> 
-            PosY: <span id="posy"></span><br /> 
-            PosZ: <span id="posz"></span><br /> 
-            <br /> 
-            Player Rot: <span id="prot"></span><br /> 
-            Camera Rot: <span id="crot"></span><br /> 
-            </p>
+            <div id="versionwarning">
+                You are using an outdated version of GW2Link. Please <a href="GW2Link.html">download</a> the newest version now.
+            </div>
+            <div id="options-panel">
+                <a id="options-link" href="javascript:void(0)">Options</a><span id="options-collapse"> (collapse)</span>
+                <div id="options-interior">
+                    <form onsubmit="return false;">
+                        Center Map on Player: <input id="checkbox-centermap" type="checkbox" checked="yes" \>
+                        <br \>
+                        Show Waypoints: <input id="checkbox-showwaypoint" type="checkbox" checked="yes" \>
+                        <br \>
+                        Show POIs: <input id="checkbox-showpoi" type="checkbox" checked="yes" \>
+                        <br \>
+                        Show Vistas: <input id="checkbox-showvista" type="checkbox" checked="yes" \>
+                        <br \>
+                        Show Skill Challenges: <input id="checkbox-showskill" type="checkbox" checked="yes" \>
+                        <br \>
+                        Show Tasks: <input id="checkbox-showtask" type="checkbox" checked="yes" \>
+                        <br \>
+                        GW2Link IP: <input id="form-gw2linkip" type="text" value="127.0.0.1" \>
+                    </form>
+                </div>
+            </div>
+            <div id="raw-panel">           
+                <h2>Raw Data</h2>
+                <p>
+                Status: <span id="status">Linker not found</span><br /> 
+                Game: <span id="game"></span><br /> 
+                Name: <span id="name"></span><br /> 
+                Server: <span id="server"></span><br /> 
+                Map: <span id="map"></span><br /> 
+                <br /> 
+                PosX: <span id="posx"></span><br /> 
+                PosY: <span id="posy"></span><br /> 
+                PosZ: <span id="posz"></span><br /> 
+                <br /> 
+                Player Rot: <span id="prot"></span><br /> 
+                Camera Rot: <span id="crot"></span><br /> 
+                </p>
+            </div>
         </div>
     </div>
     <div id="bottom-bar">

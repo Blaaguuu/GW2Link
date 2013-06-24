@@ -1,4 +1,4 @@
-html, body, div, span, h1, h2, h3, h4, h5, h6, p, a, img, strike, strong, sub, sup, b, u, i, center, dl, dt, dd, ol, ul, li, form, label, table, tbody, tfoot, thead, tr, th, td, canvas, audio, video {
+html, body, div, span, h1, h2, h3, h4, h5, h6, p, a, img, strike, strong, b, u, i, center, dl, dt, dd, ol, ul, li, form, label, table, tbody, tfoot, thead, tr, th, td, canvas, audio, video {
     margin:0;
     padding:0;
     border:0;
@@ -67,7 +67,6 @@ a:hover {
     height:100%;
     background-color:#181818;
     background-repeat:no-repeat;
-    z-index:-100;
     overflow:hidden;
 }
 
@@ -99,48 +98,51 @@ a:hover {
 
 }
 
-#map-player-pos {
-    top:0px;
+#top-download {
+
+
+}
+
+#link-status {
+    display:none;
+
+}
+
+#link-status-a {
+    display:inherit;
+
+}
+
+#link-status-b {
+    display:inherit;
+    color:#eccccc;
+}
+
+#versionwarning {
+    display:none;
     left:0px;
-    width:128px;
-    height:128px;
-    position:absolute;
+    right:0px;
+    padding:4px;
+    background-color:#602020;
+}
+
+#options-panel {
+    position:relative;
+    left:0px;
+    right:0px;
+    height:160px;
+    padding:4px;
+    background-color:#302020;
+}
+
+#options-collapse {
+    font-size:65%;
+}
+
+#raw-panel {
+    position:relative;
+    left:0px;
+    right:0px;
     background-color:#202020;
-    z-index:-110;
-    visibility:hidden;
-}
-
-#map-camera-rot {
-    position:absolute;
-    top:24px;
-    left:24px;
-    width:80px;
-    height:80px;
-    -webkit-transform: rotate(45deg);
-    -moz-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    -o-transform: rotate(45deg);
-    background-image:url('img/cam.png');
-    background-size:80px 80px;
-    background-repeat:no-repeat;
-    z-index:-85;
-    visibility:visible;
-}
-
-#map-player-rot {
-    position:absolute;
-    top:48px;
-    left:48px;
-    width:32px;
-    height:32px;
-    -webkit-transform: rotate(45deg);
-    -moz-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    -o-transform: rotate(45deg);
-    background-image:url('img/char.png');
-    background-size:32px 32px;
-    background-repeat:no-repeat;
-    z-index:-80;
-    visibility:visible;
 }
 

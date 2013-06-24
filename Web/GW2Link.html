@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>GW2 Realtime Map</title>
-    
+
     <meta charset="UTF-8">
     <meta name="description" content="GW2 Realtime Map" />
     <meta name="keywords" content="gw2, guild, wars, map, event, events, dragon, dragons, timer, gw2link, gw2linker, link" />
@@ -20,22 +20,17 @@
     <p>
         <strong>What is GW2Link?</strong>
         <br />
-        It is a very simple application when gathers data such as player position, rotation, server, and map from a running Guild Wars 2 client, and sends that data to a website that requests it.
+        It is a very simple application which gathers data such as player position, rotation, server, and map from a running Guild Wars 2 client, and sends that data to a website that requests it.
     </p>
     <p>
         <strong>How do I use GW2Link?</strong>
         <br />
-        Download the zip file above, and extract the exe anywhere on your computer. Run GW2Link.exe, as well as the Guild Wars 2 client, and open the <a href="index.html">map</a> - ideally on a second monitor. You should see the download link at the top of the page change to a "Connected" status notification, and a blue icon will appear where your player is. To the right of the map you can see all of the raw data that is gathered by GW2Link.
-    </p>
-    <p>
-        <strong>The icon's location is a little off... what gives?</strong>
-        <br />
-        As far as I can tell, the regions specified by ArenaNet's map API are slightly off. If it isn't corrected by ArenaNet soon, I will manually fix the offsets for each map soon.
+        Download the zip file above, and extract the exe anywhere on your computer. Run GW2Link.exe, as well as the Guild Wars 2 client, and open the <a href="index.html">map</a> - ideally on a second monitor (read on for using a tablet/phone). You should see the download link at the top of the page change to a "Connected" status notification, and a blue icon will appear where your player is. To the right of the map you can see all of the raw data that is gathered by GW2Link.
     </p>
     <p>
         <strong>The GW2Link application is really ugly...</strong>
         <br />
-        It is just something I threw together rather quickly - I will update it later to make it look nicer, be more stable, 
+        It is something I threw together rather quickly - I will update it later to make it look nicer, and be more stable, 
     </p>
     <p>
         <strong>The map is boring... what's the point?</strong>
@@ -43,9 +38,14 @@
         You're boring! But this is only a proof-of-concept at the moment. It serves no purpose other than to show that it's possible to display the player's location overlayed on the GW2 map. Eventually I (or someone else) plan on showing more useful information like all of the current map's running events, and events that will start soon. (read further if you are developer, and interested in expanding on this)
     </p>
     <p>
+        <strong>Can I view the map on my tablet/phone?</strong>
+        <br />
+        You sure can! The only requirement is that your device is using Wifi on the same local network as the PC which is running GW2 and GW2Link (the PC doesn't have to be using Wifi). All you need to do then is load up the map on your device, expand the options section in the right panel, and enter the local IP address of your PC in the "GW2Link IP" form. You can find your PC's local IP address in Windows by opening your Start menu, typing "cmd" in the search, then in the console that appears enter "ipconfig". One of the many lines that is printed out will be labled "IPv4 Address", and the listed IP should look something like "192.168.1.112".
+    </p>
+    <p>
         <strong>Won't I get banned for using mods?</strong>
         <br />
-        There are no guarantees, but this is highly unlikely in the case of GW2Link. Due to the way the data is gathered, I don't believe GW2Link actually violates the EULA. It doesn't actually read any of GW2's memory, but rather exploits an existing feature inteded for use with the Mumble voip client - GW2Link registers a tiny block of memory on your computer, and the GW2 client periodically looks for that memory and willingly fills it with with player data.
+        There are no guarantees, but this is highly unlikely in the case of GW2Link. Due to the way the data is gathered, I don't believe GW2Link violates the EULA. It doesn't actually read any of GW2's memory, but rather exploits an existing feature inteded for use with the Mumble voip client - GW2Link registers a tiny block of memory on your computer, and the GW2 client periodically looks for that memory and willingly fills it with with player data.
     </p>
     <p>
         <strong>Is this going to steal my password?</strong>
@@ -55,10 +55,10 @@
     <p>
         <strong>I'm a developer - Can I use this on my GW2 map site?</strong>
         <br />
-        Absolutely! You can use the existing GW2Link application, or download the source from GitHub, and modify it to your heart's content.
+        Absolutely! You can use the existing GW2Link application, or download the source from <a href="https://github.com/Blaaguuu/GW2Link">GitHub</a>, and modify it to your heart's content.
     </p>
     <p>
-        <strong>Your JavaScript is bad, and you shoudl feel bad!</strong>
+        <strong>Your JavaScript is bad, and you should feel bad!</strong>
         <br />
         I know... I learned JavaScript with this project... I'm sure my code looks silly to a pro.
     </p>

@@ -6,6 +6,11 @@
 
 #define PI 3.14159265
 
+// Get the version number for GW2Link
+std::string GW2Linker::getVersion() {
+	return version;
+}
+
 // Get the status of the linker - if the game is currently sending us data
 std::string GW2Linker::getStatus() {
 	if(lm->uiTick > lastTick) {
@@ -81,6 +86,7 @@ int GW2Linker::getCamRot() {
 GW2Linker::GW2Linker() {
 	lm = NULL;
 	lastTick = 0;
+	version = "1.1";
 
 	std::cout << "Creating File Mapping\n";
 	HANDLE hMapObject = CreateFileMappingW(INVALID_HANDLE_VALUE, NULL, PAGE_READWRITE, 0, sizeof(LinkedMem), L"MumbleLink");

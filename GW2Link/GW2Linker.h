@@ -25,6 +25,9 @@ public:
 		wchar_t description[2048];
 	};
 	DWORD lastTick;
+	std::string version;
+
+	std::string getVersion();
 	std::string getStatus();
 	std::string getGame();
 	std::string getName();
@@ -36,6 +39,7 @@ public:
 	float getPosZ();
 	int getPlayerRot();
 	int getCamRot();
+	
 	
 	LinkedMem *lm;
 };
