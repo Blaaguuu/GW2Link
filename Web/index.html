@@ -7,17 +7,45 @@
     <meta name="description" content="GW2 Realtime Map" />
     <meta name="keywords" content="gw2, guild, wars, map, event, events, dragon, dragons, timer, gw2link, gw2linker, link" />
 
-    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.5/leaflet.css" />
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.css" />
     <!--[if lte IE 8]>
-        <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.5/leaflet.ie.css" />
+        <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.ie.css" />
     <![endif]-->
     <link rel="stylesheet" type="text/css" href="map.css" />
 
+    <script src="jquery.js"></script>
+    <script src="jquery.cookie.js"></script>
+    <script src="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.js"></script>
 
 </head>
 <body>
     <div id="top-bar">
-        GW2 Realtime Map - <span id="top-download"><a href="GW2Link.html">Download GW2Link</a></span><span id="link-status"><span id="link-status-a">GW2Linker: </span><span id="link-status-b">Not Connected</span></span>
+        <span class="barcontent">
+            GW2 Realtime Map - 
+            <span id="top-download"><a href="GW2Link.html">Download GW2Link (Realtime Player Tracking)</a></span>
+            <span id="link-status"><span id="link-status-a">GW2Linker: </span><span id="link-status-b">Not Connected</span></span>
+            <span id="trackplayer">
+                <span>Track Player</span>
+                <input id="trackplayercheck" type="checkbox" />
+            </span>
+            <select id="serverselector" disabled>
+                <option value="0">Select Server</option>
+                <option id="serveroption-overflow" value="1" display="none">Overflow</option>
+            </select>
+            <select id="mapselector" disabled>
+                <option value="0">Select Map</option>
+                <option id="mapoption-other" value="1" display="none">Other</option>
+            </select>
+            <div id="language">
+                <span>Language</span>
+                <select id="langselector">
+                    <option value="en">English</option>
+                    <option value="fr">Français</option>
+                    <option value="de">Deutsch</option>
+                    <option value="es">Español</option>
+                </select>
+            </div>
+        </span>
     </div>
     <div id="content-container">
         <div id="map-container"></div>
@@ -25,51 +53,69 @@
             <div id="versionwarning">
                 You are using an outdated version of GW2Link. Please <a href="GW2Link.html">download</a> the newest version now.
             </div>
-            <div id="options-panel">
-                <a id="options-link" href="javascript:void(0)">Options</a><span id="options-collapse"> (collapse)</span>
-                <div id="options-interior">
+            <div id="eventclock">
+                <span id="eventtime">00:00</span>
+                <span> - Event Update</span>
+            </div>
+            <div id="options-panel" class="collapse-panel" collapse="Options" collapsed="false">
+                <div>
+                    <a id="options-link" class="collapse-link" collapse="Options" href="javascript:void(0)">Options</a><span id="options-collapse" class="collapse-text" collapse="Options"> (expand)</span>
+                </div>
+                <div id="options-interior"  class="collapse-interior" collapse="Options">
                     <form onsubmit="return false;">
-                        Center Map on Player: <input id="checkbox-centermap" type="checkbox" checked="yes" \>
-                        <br \>
-                        Show Waypoints: <input id="checkbox-showwaypoint" type="checkbox" checked="yes" \>
-                        <br \>
-                        Show POIs: <input id="checkbox-showpoi" type="checkbox" checked="yes" \>
-                        <br \>
-                        Show Vistas: <input id="checkbox-showvista" type="checkbox" checked="yes" \>
-                        <br \>
-                        Show Skill Challenges: <input id="checkbox-showskill" type="checkbox" checked="yes" \>
-                        <br \>
-                        Show Tasks: <input id="checkbox-showtask" type="checkbox" checked="yes" \>
-                        <br \>
-                        GW2Link IP: <input id="form-gw2linkip" type="text" value="127.0.0.1" \>
+                        <!-- Show Events: <input id="checkbox-showevent" type="checkbox" />
+                        <br />
+                        Show Waypoints: <input id="checkbox-showwaypoint" type="checkbox" />
+                        <br />
+                        Show POIs: <input id="checkbox-showlandmark" type="checkbox" />
+                        <br />
+                        Show Vistas: <input id="checkbox-showvista" type="checkbox" />
+                        <br />
+                        Show Skill Challenges: <input id="checkbox-showskill" type="checkbox" />
+                        <br />
+                        Show Tasks: <input id="checkbox-showtask" type="checkbox" />
+                        <br />
+                        Show Dungeons: <input id="checkbox-showunlock" type="checkbox" />
+                        <br /> -->
+                        GW2Link IP: <input id="form-gw2linkip" type="text" value="127.0.0.1" />
                     </form>
                 </div>
             </div>
-            <div id="raw-panel">           
-                <h2>Raw Data</h2>
-                <p>
-                Status: <span id="status">Linker not found</span><br /> 
-                Game: <span id="game"></span><br /> 
-                Name: <span id="name"></span><br /> 
-                Server: <span id="server"></span><br /> 
-                Map: <span id="map"></span><br /> 
-                <br /> 
-                PosX: <span id="posx"></span><br /> 
-                PosY: <span id="posy"></span><br /> 
-                PosZ: <span id="posz"></span><br /> 
-                <br /> 
-                Player Rot: <span id="prot"></span><br /> 
-                Camera Rot: <span id="crot"></span><br /> 
-                </p>
+            <div id="raw-panel" class="collapse-panel" collapsed="false" collapse="Raw">           
+                <a id="raw-link" class="collapse-link" collapse="Raw" href="javascript:void(0)">Raw Data</a><span id="raw-collapse" class="collapse-text" collapse="Raw"> (expand)</span>
+                <div id="raw-interior"  class="collapse-interior" collapse="Raw">
+                    <p>
+                        Status: <span id="status">Linker not found</span><br /> 
+                        Game: <span id="game"></span><br /> 
+                        Name: <span id="name"></span><br /> 
+                        Server: <span id="server"></span><br /> 
+                        Map: <span id="map"></span><br /> 
+                        <br /> 
+                        PosX: <span id="posx"></span><br /> 
+                        PosY: <span id="posy"></span><br /> 
+                        PosZ: <span id="posz"></span><br /> 
+                        <br /> 
+                        Player Rot: <span id="prot"></span><br /> 
+                        Camera Rot: <span id="crot"></span><br />
+                    </p>
+                </div>
+            </div>
+            <div id="worldboss-panel" class="collapse-panel" collapse="WorldBosses" collapsed="false">
+                <div>
+                    <a id="worldboss-link" class="collapse-link" collapse="WorldBosses" href="javascript:void(0)">World Bosses</a><span id="options-collapse" class="collapse-text" collapse="WorldBosses"> (collapse)</span>
+                </div>
+                <div id="worldboss-interior"  class="collapse-interior" collapse="WorldBosses">
+                    <div id="wb-start"></div>
+                </div>
             </div>
         </div>
     </div>
     <div id="bottom-bar">
-        <a href="GW2Link.html">About GW2Link</a>
+        <span class="barcontent">
+            <a href="GW2Link.html">About GW2Link</a>
+        </span>
     </div>
 
-    <script src="jquery.js"></script>
-    <script src="http://cdn.leafletjs.com/leaflet-0.5/leaflet.js"></script>
     <script src="map.js"></script>
     
 </body>

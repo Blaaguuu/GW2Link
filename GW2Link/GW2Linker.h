@@ -9,6 +9,7 @@ public:
 	GW2Linker();
 	~GW2Linker();
 
+	// MumbleLink data structure
 	struct LinkedMem {
 		UINT32	uiVersion;
 		DWORD	uiTick;
@@ -24,13 +25,14 @@ public:
 		unsigned char context[256];
 		wchar_t description[2048];
 	};
+
 	DWORD lastTick;
 	std::string version;
 
 	std::string getVersion();
 	std::string getStatus();
 	std::string getGame();
-	std::string getName();
+	std::string getIdentity();
 	int getServer();
 	int getMap();
 
@@ -39,7 +41,7 @@ public:
 	float getPosZ();
 	int getPlayerRot();
 	int getCamRot();
-	
+	std::string getContext();
 	
 	LinkedMem *lm;
 };
